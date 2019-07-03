@@ -1,0 +1,209 @@
+.nav-bar{
+    background-color: #21bee6;
+    overflow: hidden;
+}
+figure{
+    float: left;
+    margin-right: 35px;
+}
+figcaption{
+  font-weight: bold;
+  font-style: italic;
+  font-family: sans-serif;
+  color: rgb(3, 3, 41);
+  margin-left: 0;
+}
+.nav-bar a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+.active{
+    background-color: rgb(36, 87, 133);
+    color: brown;
+}
+#about{
+    color:rgb(15, 13, 13);
+}
+.nav-bar .icon{
+    display: none;
+}
+.drop-down{
+    float: left;
+    overflow: hidden;
+}
+.drop-down-button{
+    font-size: 17px; 
+    border: none;
+    outline: none;
+    color: rgb(15, 13, 13);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin-right: 90px;
+    margin-top: 10px;
+}
+.drop-down-content{
+    position: absolute;
+    display: none;
+    background-color: aquamarine;
+    min-width: 140px;
+    z-index: 1;
+    /*box-shadow: darkgray;*/
+}
+.drop-down-content a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.nav-bar a:hover, .drop-down:hover, .drop-down-button:hover{
+background-color: blue;
+color: white;
+}
+.drop-down-content a:hover{
+    background-color:rgb(36, 87, 133);
+    color: rgb(245, 239, 239);
+}
+.drop-down:hover .drop-down-content{
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .nav-bar a:not(:first-child), .drop-down .drop-down-button {
+      display: none;
+    }
+    .nav-bar a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks
+    on the icon. This class makes the topnav look good on small screens (display the 
+    links vertically instead of horizontally) */
+
+@media screen and (max-width: 600px) {
+    .nav-bar.responsive {position: relative;}
+    .nav-bar.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav-bar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .nav-bar.responsive .drop-down {float: none;}
+    .nav-bar.responsive .drop-down-content {position: relative;}
+    .nav-bar.responsive .drop-down .drop-down-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+body{
+  background-color: antiquewhite;
+}
+.mid-body{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.left-section{
+order: 1;
+}
+.right-section{
+order: 2;
+flex: 1;
+}
+.mid-body ul{
+  list-style: none;
+}
+h4{
+  margin: 20px;
+  text-decoration: underline;
+}
+.mid-body ul li::before{
+  content: "\2020";
+  color: #e70d31;
+  font-weight: bolder;
+}
+.mid-body ul li:hover{
+  color: #1ea4c5;
+}
+.footer-top {
+    background-color: #1ea4c5;
+    padding-top: 50px;
+    color: #fff;
+    position: fixed;
+    width: 99%;
+    bottom: 0;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+  }
+  .fa {
+    padding: 10px;
+    font-size: 15px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  .fa:hover{
+    opacity: 0.7;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram{
+    background: #bb4007;
+    color: white;
+  }
+  .fa-whatsapp{
+    background: rgb(10, 175, 10);
+    color:white;
+  }
+.footer-column-1{
+  order: 1;
+  }
+.footer-column-2{
+  order: 2;
+}
+.footer-column-3{
+  order: 3;
+}
+h5{
+  text-align: center;
+}
+.footer-top a{
+  color: #fff;
+}
+.footer-top a:hover{
+  color: #0824a5;
+}
+.footer-bottom{
+  bottom: 0;
+  width: 99%;
+  position: fixed;
+  color: black;
+  background-color: #096e88;
+  text-align: center;
+}
+
+/*Syling courses.html*/

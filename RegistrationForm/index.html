@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel='stylesheet' href ='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<h1>Application Form</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="main">
+		<div class="container">
+			<h2>Personal Information</h2>
+			<div class="row">
+				<h3>Full Name</h3>
+				<div class="col-xs-4 col-md-4">
+					<p><input type="text" placeholder="First" id="inp" required></p>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<p><input type="text" placeholder="Middle" id="inp" required></p>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<p><input type="text" placeholder="Last" id="inp" required></p>
+				</div>
+			</div>
+			<div class="row">
+				<h3>Gender</h3>
+				<div class="col-xs-12 col-md-12">
+					<p>
+						<select>
+						<option class="choices">Male</option>
+						<option class="choices">Female</option>
+					   </select>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<h3>Email Address</h3>
+				<div class="col-xs-12 col-md-12">
+					<p><input type="email" id="inp"></p>
+				</div>
+			</div>
+			<div class="row">
+				<h3>Birth Details</h3>
+				<form class="form">
+				<div class="col-xs-3 col-md-3">
+					<p><input type="text" placeholder="Month" id="inp" required></p>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<p><input type="text" placeholder="Day" id="inp" required></p>
+				</div>
+				<div class="col-xs-3 col-md-3">
+					<p><input type="text" placeholder="Year" id="inp" required></p>
+				</div>
+			</form>
+			</div>
+			<h2>Employment Details</h2>
+			<div class="row">
+				<h3>Employment Status</h3>
+				<div class="col-xs-10 col-md-10">
+					<select>
+						<option class="choices">Employed</option>
+						<option class="choices">Unemployed</option>
+					</select>
+				</div>
+			</div>
+			<h2>Academic Qualifications</h2>
+			<div class="row">
+				<h3>University/College</h3>
+				<div class="col-xs-2 col-md-2">
+					<select>
+						<option class="choices">Certificate</option>
+						<option class="choices">Diploma</option>
+						<option class="choices">Degree</option>
+						<option class="choices">Masters</option>
+						<option class="choices">PhD</option>
+					</select>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<input type="text" placeholder="Name of Institution" id="inp">
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<input type="text" placeholder="Field of Study" id="inp">
+				</div>
+			</div>
+			<h2>Academic Documents</h2>
+			<div class="row">
+				<h3>Upload College Certificate and CV</h3>
+				<div class="col-xs-4 col-md-4">
+					<input type="file" placeholder="Certificate" id="inp">
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<input type="file" placeholder="Resume" id="inp">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 col-md-2">
+					<button type="submit", class="btn">Submit Form</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="final">
+		<h3>Thank you for making your application. Your application will be reviewed and communicated in good time.</h3>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$('.btn').click(function(){
+			$('.final').animate({height:"toggle",opacity:"toggle"},"slow")
+		})
+	</script>
+</body>
+</html>

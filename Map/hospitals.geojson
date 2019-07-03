@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "hospitals",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Homabay County TRH", "Current_In": 51056, "Enrolled_I": 191, "x": 34.45939, "y": -0.5330723 }, "geometry": { "type": "Point", "coordinates": [ 34.45939, -0.5330723 ] } },
+{ "type": "Feature", "properties": { "Name": "Suba Sub-County Hosp", "Current_In": 15672, "Enrolled_I": 168, "x": 34.16582, "y": -0.5376996 }, "geometry": { "type": "Point", "coordinates": [ 34.16582, -0.5376996 ] } },
+{ "type": "Feature", "properties": { "Name": "Tala Health Centre", "Current_In": 3333, "Enrolled_I": 42, "x": 34.83802, "y": -0.44364 }, "geometry": { "type": "Point", "coordinates": [ 34.83802, -0.44364 ] } },
+{ "type": "Feature", "properties": { "Name": "Got Kamondi Dispensary", "Current_In": 1015, "Enrolled_I": 28, "x": 34.91194, "y": -0.42111 }, "geometry": { "type": "Point", "coordinates": [ 34.91194, -0.42111 ] } },
+{ "type": "Feature", "properties": { "Name": "Tumaini Medical Clinic", "Current_In": 16, "Enrolled_I": 2, "x": 34.16841, "y": -0.54087 }, "geometry": { "type": "Point", "coordinates": [ 34.16841, -0.54087 ] } },
+{ "type": "Feature", "properties": { "Name": "Wagwe Health Centre", "Current_In": 2716, "Enrolled_I": 46, "x": 34.57419, "y": -0.34992 }, "geometry": { "type": "Point", "coordinates": [ 34.57419, -0.34992 ] } },
+{ "type": "Feature", "properties": { "Name": "Hope Compassionate Dispensary", "Current_In": 2265, "Enrolled_I": 26, "x": 34.46021, "y": -0.53423 }, "geometry": { "type": "Point", "coordinates": [ 34.46021, -0.53423 ] } },
+{ "type": "Feature", "properties": { "Name": "Got Kojowi Health Centre", "Current_In": 5676, "Enrolled_I": 50, "x": 34.26536, "y": -0.74146 }, "geometry": { "type": "Point", "coordinates": [ 34.26536, -0.74146 ] } },
+{ "type": "Feature", "properties": { "Name": "Homa Hill Health Centre", "Current_In": 7340, "Enrolled_I": 38, "x": 34.46834, "y": -0.35379 }, "geometry": { "type": "Point", "coordinates": [ 34.46834, -0.35379 ] } },
+{ "type": "Feature", "properties": { "Name": "Gongo Dispensary", "Current_In": 2892, "Enrolled_I": 35, "x": 34.62109, "y": -0.52814 }, "geometry": { "type": "Point", "coordinates": [ 34.62109, -0.52814 ] } }
+]
+}

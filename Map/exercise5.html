@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Leaflet sample</title>
+      <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+      <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.js"></script>
+   </head>
+
+   <body>
+      <div id = "map" style = "width: 1280px; height: 580px"></div>
+      <script>
+         // Creating map options
+         var mapOptions = {
+            center: [-0.0757,34.7865],
+            zoom: 6
+         }
+         
+		 
+         // Creating a map object
+         var map = new L.map('map', mapOptions);
+         
+
+		
+		//Adding basemaps
+		var basemaps = {
+							'OSM' : L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+							
+							'Google Streets' : L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+								maxZoom: 20,
+								subdomains:['mt0','mt1','mt2','mt3']
+							}),
+
+							'Google Hybrid' : L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+								maxZoom: 20,
+								subdomains:['mt0','mt1','mt2','mt3']
+							}),
+							
+							'Google Satellite' : L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+								maxZoom: 20,
+								subdomains:['mt0','mt1','mt2','mt3']
+							}),
+					
+						};
+		
+		
+		//Adding Thematic Layers (GeoJSON and WMS)
+		var thematicLayers = {
+							'Homabay' : new L.GeoJSON.AJAX("hospitals1.geojson",{
+								onEachFeature: onEachFeature
+							}),
+							
+							'Roads' : new L.GeoJSON.AJAX("rd.geojson"),
+							
+							'Sea Floor Bathymetry' : L.tileLayer.wms('http://lakerises.com:9898/mapserver/ows?', {
+								layers: 'cite:Sea_Floor_Bathymetry',
+								format: 'image/png',
+								transparent: true
+						})
+			
+						};
+			
+			//Load the layer control onto the map
+			L.control.layers(basemaps, thematicLayers).addTo(map);
+
+			
+			//Choose the layers to be displayed on page load
+			basemaps.OSM.addTo(map);
+			thematicLayers.Homabay.addTo(map);
+			
+			
+		//Creating info section
+		var info = L.control();
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.update();
+			return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.update = function (properties) {
+			this._div.innerHTML = '<h4>Hospital Details</h4>' +  (properties ?
+				'<b>' +'Name: </b>'+ properties.Name + '</br>' + '<b>' + 'Current Patients In Care: </b>' + properties.Current_In + '</br>' + '<b>' + 'Patients Enrolled In Care: </b>' + properties.Enrolled_I + '</br>' + '<b>' + 'Nurses: </b>' + properties.Nurses + '</br>' + '<b>' + 'Infectious Disease Specialists: </b>' + properties.IDS + '</br>' + '<b>' + 'Mental Health Specialists: </b>' + properties.MentalHeal + '</br>' + '<b>' + 'Pharmacists: </b>' + properties.Pharmacist + '</br>' + '<b>' + 'Nutritionists: </b>' + properties.Nutritioni + '</br>' + '<b>' + 'Dentists: </b>' + properties.Dentist + '</br>' + '<b>' + 'Social Workers: </b>' + properties.SocialWork + '</br>' + '<b>' + 'Case Managers: </b>' + properties.CaseManage + '</br>' + '<b>' + 'Mentors: </b>' + properties.Mentors + '</br>' + '<b>' + 'Abuse Specialists: </b>' + properties.AbuseSpeci + '</br>'
+				: 'click over a hospital');
+		};
+
+		
+		info.addTo(map);
+
+
+		function highlightFeature(e) {
+			var layer = e.target;
+			info.update(layer.feature.properties);
+		}
+		
+		
+		function onEachFeature(feature, layer) {
+			layer.on({
+				click: highlightFeature
+			});
+		}
+		
+      </script>
+	  
+	  <style>
+	  
+	  .info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+	</style>
+   </body>
+   
+</html>
