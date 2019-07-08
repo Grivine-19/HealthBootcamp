@@ -141,15 +141,26 @@ h4{
 }
 .footer-top {
     background-color: #1ea4c5;
-    padding-top: 50px;
+    padding-top: 2px;
     color: #fff;
-    position: fixed;
-    width: 99%;
-    bottom: 0;
-    padding-top: 5px;
+    position: static;
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 35px;
+  }
+  #other{
+    list-style-type: none;
+  }
+  #other li ::before{
+    content: ">"
+  }
+  #social{
+    padding-left: 9px;
+  }
+  #social li{
+    list-style-type: none;
+    display:inline-block;
+    margin:0 2px;
   }
   .fa {
     padding: 10px;
@@ -190,19 +201,23 @@ h4{
 }
 h5{
   text-align: center;
+  color: #0824a5;
 }
 .footer-top a{
   color: #fff;
 }
 .footer-top a:hover{
-  color: #0824a5;
+  color: #ceec47;
 }
 .footer-bottom{
   bottom: 0;
-  width: 99%;
-  position: fixed;
+  width: 100%;
+  position: relative;
   color: black;
   background-color: #096e88;
+  padding: 5px 0px 4px 0px;
+}
+#footer-text{
   text-align: center;
 }
 
